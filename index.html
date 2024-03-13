@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+
+
+  <title>Card Details</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+  <div class="wrapper">
+    <div class="gridcontainer">
+
+      <div class="card-side">
+
+        <div class="card card1">
+          <img id="backgroundimg" src="/images/bg-card-front.png" alt="credit card">
+          <div class="card-front-info">
+            <img id="cardlogo" src="/images/card-logo.svg" alt="">
+            <span id=Cardnumbers>0000 0000 0000 0000</span>
+            <div class="card-id">
+              <span>Jane Appleseed</span>
+              <span>00/00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card2">
+          <img src="/images/bg-card-back.png" alt="credit card">
+          <div class="card-back-info">
+            <span>000</span>
+          </div> 
+        </div>
+
+      </div>
+
+      <div class="formside">
+        <div class="creditCardForm">
+          <form>
+            <div class="cardentry" id="cardholder">
+              <label for="cardholderName">CARDHOLDER NAME</label>
+              <input type="text" id="cardholderName" placeholder="e.g. Jane Appleseed" required>
+            </div>
+            <div class="cardentry" id="cardhnumber"> 
+              <label for="cardNumber">CARD NUMBER</label>
+              <input type="text" id="cardNumber" placeholder="e.g. 1234 5678 9123 0000" required>
+            </div>
+
+            <div class="bottomcardsection">
+              <div class="cardentry" id="cardexpiry">
+                <label for="expiryMonth">EXP. DATE (MM/YY)</label>
+                <div class="expirylabels">
+                  <input type="text" id="expiryMonth" placeholder="MM" pattern="[0-9]{2}" required>
+                  <input type="text" id="expiryYear" placeholder="YY" pattern="[0-9]{2}" required>
+                </div>  
+              </div>
+
+              <div class="cardentry" id="cardcvc">
+                <label for="cvc">CVC</label>
+                <input type="text" id="cvc" placeholder="e.g. 123" pattern="[0-9]{3}" required>
+              </div>
+            </div>
+            <button id="confirm" class="continue" type="submit">Confirm</button>
+          </form>
+        </div>
+
+
+        <div class="confirmed-box">
+          <div class="image-confirmed">
+            <img src="/images/icon-complete.svg" alt="">
+          </div>
+          <h1>Thank you!</h1>
+          <p>We've added your card details</p>
+          <button id="continue" class="continue">Continue</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,315 @@
+
+:root {
+    --ff-sans: "Space Grotesk", sans-serif;
+    --fw-light: 300;
+    --fw-normal: 500;
+    --fw-bold: 700;
+
+    --fs-smaller: 12px;
+    --fs-small: 14px;
+    --fs-normal: 18px;
+    --fs-large: 2rem;
+    --fs-larger: 3rem;
+
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-violet1:hsl(270, 3%, 87%);
+    --clr-violet2:hsl(279, 6%, 55%);
+    --clr-violet3:hsl(278, 68%, 11%);
+    --clr-red:hsl(0, 100%, 66%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: var(--ff-sans);
+    font-weight: var(--fw-normal);
+    color: var(--clr-violet3);
+}
+
+.gridcontainer {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+.confirmed-box {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.confirmed-box h1 {
+    padding-block: 1rem;
+}
+
+.confirmed-box p {
+    padding-bottom: 2rem;
+}
+
+.card-side {
+    background-image: url(/images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+form {
+    font-weight: var(--fw-normal);
+    font-size: var(--fs-small);
+}
+
+.creditCardForm {
+    max-width:400px;
+    font-size: var(--fs-small);
+    display: block;
+}
+
+.card {
+    position: relative;
+}
+  
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card-back-info {
+    position: absolute;
+    top: 48%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+}
+
+#cardlogo {
+    width: 20%;
+    padding: 8% 0% 19% 8%;
+    position: relative;
+}
+
+.card-back-info span {
+    color: var(--clr-white);
+    font-size: var(--fs-normal)
+}
+
+.card-front-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content; 
+    width: 100%;
+    height: 100%;
+    color: var(--clr-white);
+}
+
+.card-front-info span {
+    text-align: center;
+    font-size: 120%; 
+}
+
+#Cardnumbers {
+    font-size: 24px;
+    display: block;
+    letter-spacing: 4px;
+    line-height: 2rem;
+}
+
+.card-id {
+    display:flex;
+    justify-content: space-between;
+    font-size: var(--fs-small);
+    padding-top: 1.5rem;
+    margin-inline: 10%;
+    padding-bottom: 10px;
+}
+
+.formside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    text-align: left;
+    letter-spacing: 2px;
+    font-size: var(--fs-smaller);
+}
+
+.cardentry {
+    display: grid;
+    margin-bottom: 1rem;
+}
+
+.bottomcardsection {
+    display: flex;
+    max-width: 400px;
+}
+
+#cardexpiry {
+    display: block;
+    width: 50%;
+}
+
+#cardcvc {
+    display: block;
+    width: 50%;
+}
+
+#cvc {
+    width: 100%;
+}
+
+.continue {
+    margin: 0 auto;
+    display: flex;
+    height: 50px;
+    width: 400px;
+    background-color: var(--clr-violet3);
+    color: var(--clr-white);
+    font-size: var(--fs-normal);
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.continue:hover {
+    opacity: 0.8;
+}
+
+input {
+    height: 44px;
+    border-radius: 5px;
+    font-size: var(--fs-normal);
+    border: 1px solid var(--clr-violet1);
+    margin-block: 5px;
+    font-family: var(--ff-sans);
+    font-weight: var(--fw-normal);
+    color: var(--clr-violet2);
+    text-indent: 1rem;
+}
+
+input::placeholder {
+    color: var(--clr-violet1);
+}
+
+input:focus {
+    border: 2px solid transparent;
+    outline: none;
+    background:
+    linear-gradient(to right, white, white), 
+    linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+.expirylabels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.expirylabels input {
+    flex: 1; /* Distribute available space equally among input elements */
+    width: 70%; /* Set width of each input with a small gap */
+    margin-right: 10px; /* Add some spacing between input elements */
+  }
+
+
+
+
+
+@media (max-width: 800px) {
+    .gridcontainer {
+        display: block;
+    }
+    .card-side {
+        background-image: url(/images/bg-main-mobile.png);
+        background-repeat: repeat-x;
+        margin-bottom: 2rem;
+        gap: 0;
+        display: block;
+        height: clamp(250px, 55vw, 330px);
+    }
+
+    .card2 {
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        z-index: 1;
+        width: clamp(280px, 60%, 400px);
+        font-size: var(--fs-smaller);
+    }
+
+    .card1 {
+        position: fixed;
+        top: 7rem;
+        right: 2rem;
+        z-index: 2;
+        width: clamp(280px, 60%, 400px);
+    }
+
+    #Cardnumbers {
+        font-size: 18px;
+        letter-spacing:2px;
+    }
+
+    .card-id {
+        display:flex;
+        justify-content: space-between;
+        font-size: 11px;
+        padding-top: 1rem;
+        margin-inline: 10%;
+        padding-bottom: 15px;
+    }
+
+    .bottomcardsection {
+        display: flex;
+        grid-template-columns: 1fr 1fr;
+        max-width: 300px;
+    }
+
+    .cardentry {
+        max-width: 300px;
+    }
+
+    .continue {
+        max-width: 300px;
+    }
+
+    #cardlogo {
+        width: 20%;
+        padding: 8% 0% 13% 8%;
+        position: relative;
+    }
+
+}
+
+@media (min-width: 1150px) {
+    .card1 {
+        position: relative;
+        right: -3rem;
+    }
+
+    .card2 {
+        position: relative;
+        left: 8rem;
+    }
+
+}
